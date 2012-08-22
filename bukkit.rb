@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'json'
 
-BUKKIT_BUCKET = []
+@@bukkit_bucket = []
 
 get '/' do
   bukkits = get_bukkits()
@@ -25,14 +25,25 @@ get '/:matchword.:format' do
   redirect "http://bukk.it/#{pretties.sample}" 
 end
 
+get '/:matchword' do
+  bukkits = get_bukkits()
+  pretties = bukkits.select do |b|
+    match_word_and_format(params[:matchword], nil, b)
+  end
+  if pretties.length < 1
+    return 404
+  end
+  redirect "http://bukk.it/#{pretties.sample}" 
+end
+
 # SECRET SAUCE PATENT PENDING
 
 def get_bukkits
-  if BUKKIT_BUCKET.empty?
+  if @@bukkit_bucket.empty?
     doc = Nokogiri::HTML(open('http://bukk.it'))
-    BUKKIT_BUCKET = doc.css('tr > td > a').collect(&:content)
+    @@bukkit_bucket = doc.css('tr > td > a').collect(&:content)
   end
-  return BUKKIT_BUCKET
+  return @@bukkit_bucket
 end
 
 def match_word_and_format(word, format, b)
