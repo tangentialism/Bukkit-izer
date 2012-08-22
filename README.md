@@ -16,7 +16,7 @@ Returns a random image of any format.
 
 ### `GET /index.FORMAT`
 
-Returns a random image of format _FORMAT_. So, `GET /index.jpg` would return a random JPG.
+Returns a random image of format _FORMAT_. So, `GET /index.gif` would return a random GIF.
 
 `http://bukkit.tangentialism.com/index.gif`
 
@@ -24,7 +24,7 @@ Returns a random image of format _FORMAT_. So, `GET /index.jpg` would return a r
 
 ### `GET /MATCHABLE-WORD.FORMAT`
 
-Returns a random image whose name includes _MATCHABLE-WORD_ of format _FORMAT_. So, `GET /cat.gif` would return a GIF of a cat.
+Returns a random image whose name includes _MATCHABLE-WORD_ of format _FORMAT_. So, `GET /hello.gif` might return a GIF of a bear waving hello.
 
 `http://bukkit.tangentialism.com/hello.gif`
 
@@ -32,7 +32,7 @@ Returns a random image whose name includes _MATCHABLE-WORD_ of format _FORMAT_. 
 
 ### `GET /MATCHABLE-WORD`
 
-Returns a random image whose name includes _MATCHABLE-WORD_, irrespective of its format. So, `GET /dog` would return a random image of a dog, without a guarantee that it will be an awesome animated GIF.
+Returns a random image whose name includes _MATCHABLE-WORD_, irrespective of its format. So, `GET /gotime` would return a random image of a kangaroo dropping a ball, pathetically.
 
 `http://bukkit.tangentialism.com/gotime`
 
