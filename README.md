@@ -10,17 +10,33 @@ A powerful bukk.it retrieval API crafted carefully to provide appropriate images
 
 Returns a random image of any format.
 
+`http://bukkit.tangentialism.com/`
+
+![A random image of a duck](http://bukk.it/wat4.jpg)
+
 ### `GET /index.FORMAT`
 
 Returns a random image of format _FORMAT_. So, `GET /index.jpg` would return a random JPG.
+
+`http://bukkit.tangentialism.com/index.gif`
+
+![A random gif of a sighing cat](http://bukk.it/mariesigh.gif)
 
 ### `GET /MATCHABLE-WORD.FORMAT`
 
 Returns a random image whose name includes _MATCHABLE-WORD_ of format _FORMAT_. So, `GET /cat.gif` would return a GIF of a cat.
 
+`http://bukkit.tangentialism.com/hello.gif`
+
+![A random gif of a bear waving hello](http://bukk.it/hellobear.gif)
+
 ### `GET /MATCHABLE-WORD`
 
 Returns a random image whose name includes _MATCHABLE-WORD_, irrespective of its format. So, `GET /dog` would return a random image of a dog, without a guarantee that it will be an awesome animated GIF.
+
+`http://bukkit.tangentialism.com/gotime`
+
+![A random gif of a kangaroo dropping a ball, sadly](http://bukk.it/gotime.gif)
 
 **There are currently no plans for `PUT`, `POST`, or `DELETE` calls. Be happy this exists, and just pray that Ethan is available.**
 
